@@ -1,0 +1,8 @@
+# 本地转换脚本与中间产物
+*.pyc
+__pycache__/
+explore.py
+probe*.py
+verify*.py
+convert.py
+assets_manifest.json

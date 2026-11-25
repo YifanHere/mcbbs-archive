@@ -24,21 +24,37 @@
 <summary>展开 / 收起隐藏文字</summary>
 
 2022年6月9日：性感一帆，在线答疑，有问题发评论区里，看到了一般都会回复的。增加了关于Windows系统的优化内容。
+
 2022年3月26日：日常小更新
+
 2022年1月30日：修改了前言已经系统的选择内的部分内容
+
 2022年1月28日：对部分内容进行了微调
+
 2021年11月28日：修改增添了前言中的部分内容
+
 2021年11月27日：增加了 AntiRedstoneClock 插件的推荐、增加和修改了部分配置文件优化的内容、优化了排版、增加了雷区专栏
+
 2021年8月19日：更新了新版的Aikar参数，增加了分配内存大于12G时使用的参数、更新了chunky的使用教程、修改了关于预加载区块内容的表述、修正了部分语法错误、将更新日志由正序改为了倒序、更新了关于TencentOS Server的说明、更正了tick-per的推荐数值、增加了服务器选购指南中关于NVMe硬盘的说明
+
 2021年8月15日：增加了关于Minecraft服务器CPU方面的讲解、更新完善了内存不足自动重启的脚本、更新了服务端核心的选择中的内容
+
 2021年8月17日修改了前言内容，修改了文中部分内容的表述,优化了排版
+
 2021年8月14日：增加了大量关于服务器硬件配置和选购的内容、增加了客户端的优化中的内容、修改了服务器配置文件的优化中的一项错误（手快把bukkit打成spigot了，一直没发现，233）、对本文多处表述进行了修改、对重要信息设置了高亮、增加了更新日志
+
 2021年7月9日：对本文多处表述进行了修改
+
 2021年7月4日：增加了检测到内存不足自动重启的shell脚本
+
 2021年6月28日：对本文多处表述进行了修改微调
+
 2021年6月26日：增加定时重启，linux的oom机制内容
+
 2021年6月18日：修正了本文多处语法错误，修改了部分内容的表述
+
 2021年6月14日：增加预加载区块的内容
+
 2021年6月13日：发布本文
 
 </details>
@@ -347,7 +363,9 @@ java -Xms最小内存 -Xmx最大内存 -XX:+UseG1GC -XX:+ParallelRefProcEnabled 
 
 如果你为服务端分配的内存大于12G，请使用这个参数
 
-> java -Xms最小内存 -Xmx最大内存 -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar 服务端核心名.jar nogui 复制代码
+> ```bash
+> java -Xms最小内存 -Xmx最大内存 -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar 服务端核心名.jar nogui
+> ```
 
 尽管G1GC更加适用于大内存服务器，但上述参数一样是我在基于实践后，证明的确对服务器的内存有优化作用的参数。这里我们将“java -Xmx最大内存 -Xms最小内存 -jar 服务端核心.jar nogui”定义为原版参数。
 
